@@ -10,7 +10,7 @@ public abstract class Cars {
     private String pickUpLocation;
     private String DropOffLocation;
 
-    public Cars(float price, String model, String size, String pickUpDate, String dropOffDate, String pickUpLocation, String DropOffLocation) {
+    public Cars(float price, String model, String pickUpDate, String dropOffDate, String pickUpLocation, String DropOffLocation) {
        // this.companyName = companyName;
         this.price = price;
         this.model = model;
