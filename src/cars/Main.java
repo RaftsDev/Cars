@@ -28,12 +28,12 @@ public class Main {
         orderList.addCar(car8);
         orderList.addCar(car1);
 
-        Reservation user = new Reservation("Pinal");
-        String from = "Dallas";
-        String to = "Los Angelos";
-        for(Cars i : orderList.airlinesAvailable){
-            if(i.getToCity() == to && i.getFromCity() == from){
-                user.addFlightToBook(i);
+        Reservation PinalList = new Reservation("Pinal");
+        String from = "Brooklyn, NY";
+        String to = "NYC, NY";
+        for(Cars i : orderList.carsAvailable){
+            if(i.getPickUpLocation() == to && i.getDropOffLocation() == from){
+                PinalList.addCarsToList(i);
             }
         }
 
