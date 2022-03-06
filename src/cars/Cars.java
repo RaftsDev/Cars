@@ -8,9 +8,9 @@ public abstract class Cars {
     private String pickUpDate;
     private String dropOffDate;
     private String pickUpLocation;
-    private String getDropOffLocation;
+    private String DropOffLocation;
 
-    public Cars(float price, String model, String size, String pickUpDate, String dropOffDate, String pickUpLocation, String getDropOffLocation) {
+    public Cars(float price, String model, String size, String pickUpDate, String dropOffDate, String pickUpLocation, String DropOffLocation) {
        // this.companyName = companyName;
         this.price = price;
         this.model = model;
@@ -24,55 +24,38 @@ public abstract class Cars {
         this.pickUpDate = pickUpDate;
         this.dropOffDate = dropOffDate;
         this.pickUpLocation = pickUpLocation;
-        this.getDropOffLocation = getDropOffLocation;
+        this.DropOffLocation = DropOffLocation;
     }
 
-    /*
-    public Cars(float price, String flightNumber, String fromCity, String toCity) {
-        this.price = price;
-        this.flightNumber = flightNumber;
-        this.fromCity = fromCity;
-        this.toCity = toCity;
-        this.seatToBook = 1;  // Available seat to order for customer
+    public String getCompanyName() {
+        return companyName;
     }
 
     public float getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
+    public String getModel() {
+        return model;
     }
 
-    public String getFlightNumber() {
-        return flightNumber;
+    public String getSize() {
+        return size;
     }
 
-    public void setFlightNumber(String flightNumber) {
-        this.flightNumber = flightNumber;
+    public String getPickUpDate() {
+        return pickUpDate;
     }
 
-    public String getFromCity() {
-        return fromCity;
+    public String getDropOffDate() {
+        return dropOffDate;
     }
 
-    public void setFromCity(String fromCity) {
-        this.fromCity = fromCity;
+    public String getPickUpLocation() {
+        return pickUpLocation;
     }
 
-    public String getToCity() {
-        return toCity;
+    public String getDropOffLocation() {
+        return DropOffLocation;
     }
-
-    public void setToCity(String toCity) {
-        this.toCity = toCity;
-    }
-
-    public int getSeatToBook() {
-        return seatToBook;
-    }
-
-    public void setSeatToBook(int seatToBook) {
-        this.seatToBook = seatToBook;
-    }*/
 }
