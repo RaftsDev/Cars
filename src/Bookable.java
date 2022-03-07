@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Bookable {
     private String name;
-    public ArrayList<Airline> airlinesAvailable = new ArrayList<>();
+    public ArrayList<Cars> carsAvailable = new ArrayList<>();
 
     public Bookable(String name) {
         this.name = name;
@@ -14,25 +14,25 @@ public class Bookable {
         return name;
     }
 
-    public void addAvailableFlight(Airline flight) {
-        if(this.airlinesAvailable.contains(flight)) {
-            System.out.println("The flight "+ flight.getFlightNumber() + " already exists in the database.");
+    public void addCar(Cars car) {
+        if(this.carsAvailable.contains(car)) {
+            System.out.println("The car "+car.getModel()+" model of "+ car.getCompanyName()+ "company  in "+ car.getPickUpLocation()+" at "+car.getPickUpDate()+" already exists in the database.");
         }
         else {
-            this.airlinesAvailable.add(flight);
+            this.carsAvailable.add(car);
         }
-        System.out.println("You have added Flight "+ flight.getFlightNumber() + " in the database.");
-        System.out.println("The number of available flights is " + this.airlinesAvailable.size() +" in the database now.");
+        System.out.println("You have added car: "+ car.getCompanyName() + "--"+car.getModel()+"-("+car.getSize()+")-Location: "+car.getPickUpLocation()+" pick up time:"+car.getPickUpDate()+" in the database.");
+        System.out.println("The number of available cars is " + this.carsAvailable.size() +" in the database now.");
 
     }
 
-    public void removeAvailableFlight(Airline flight) {
-        if (!airlinesAvailable.contains(flight)) {
-            System.out.println("Flight "+flight.getFlightNumber()+ " is not in the database.");
+    public void removeCar(Cars car) {
+        if (!carsAvailable.contains(car)) {
+            System.out.println("Car "+car.getCompanyName() + "--"+car.getModel()+"-("+car.getSize()+")-Location: "+car.getPickUpLocation()+" pick up time:"+car.getPickUpDate()+" not in database!");
         } else {
-            airlinesAvailable.remove(flight);
-            System.out.println("You have removed Flight "+ flight.getFlightNumber() + " in the database.");
-            System.out.printf("The number of available flights is " + airlinesAvailable.size() +" in the database now.");
+            carsAvailable.remove(car);
+            System.out.println("You have removed car "+ car.getCompanyName() + "--"+car.getModel()+"-("+car.getSize()+")-Location: "+car.getPickUpLocation()+" pick up time: "+car.getPickUpDate()+ " from the database.");
+            System.out.println("The number of available cars is " + carsAvailable.size() +" in the database now.");
         }
     }
 

@@ -1,5 +1,3 @@
-package cars;
-
 public class AmericanRoads extends Cars {
 
     public AmericanRoads(float price, String model, String pickUpDate, String dropOffDate, String pickUpLocation, String DropOffLocation) {

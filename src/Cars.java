@@ -1,5 +1,3 @@
-package cars;// Parent class of All Airlines
-
 public abstract class Cars {
     public String companyName;
     private float price;

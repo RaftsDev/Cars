@@ -5,7 +5,7 @@ public class Reservation {
     private String name; //customer name
 
     //Collection - customer order list of tickets
-    private ArrayList<Airline> airlinesToBook = new ArrayList<>();
+    private ArrayList<Cars> customerList = new ArrayList<>();
 
     public Reservation(String name) {
         this.name = name;
@@ -15,33 +15,32 @@ public class Reservation {
         return name;
     }
 
-    public void addFlightToBook(Airline flight) {
-        if(airlinesToBook.contains(flight)) {
-            //Change seat property to flight object in Database and add to customer list
-            flight.setSeatToBook(flight.getSeatToBook() + 1);
+    public void addCarsToList(Cars car) {
+        if(customerList.contains(car)) {
+            //Change seat property to car object in Database and add to customer list
+            System.out.println("This car is already in your list");
         }
         else {
-            airlinesToBook.add(flight);
+            customerList.add(car);
         }
-        System.out.println("\nYou have added Flight "+ flight.getFlightNumber() + " in your list.");
-        System.out.printf("Your total price for the flights to book is: %.2f", this.getTotalPrice());
+        System.out.println("\nYou have added car: "+car.getModel()+" model of "+ car.getCompanyName()+ "company  in "+ car.getPickUpLocation()+" at "+car.getPickUpDate()+" in your list.");
+        System.out.printf("Your total price for the cars to book is: %.2f", this.getTotalPrice());
     }
 
-    public void removeFlightFromBook(Airline flight) { //remove ticket from order list
-        if (!airlinesToBook.contains(flight)) {
-            System.out.println("Flight "+flight.getFlightNumber()+ " is not in the database.");
+    public void removeCarFromList(Cars car) { //remove ticket from order list
+        if (!customerList.contains(car)) {
+            System.out.println("Car "+car.getModel()+" model of "+ car.getCompanyName()+ "company  in "+ car.getPickUpLocation()+" at "+car.getPickUpDate()+" doesnt exist in your list");
         } else {
-            airlinesToBook.remove(flight);
-            System.out.println("You have removed Flight "+ flight.getFlightNumber() + " from your list.");
-            System.out.printf("Your total price for the flights to book is: %.2f", this.getTotalPrice());
-            flight.setSeatToBook(1);
+            customerList.remove(car);
+            System.out.println("You have removed car "+car.getModel()+" model of "+ car.getCompanyName()+ "company  in "+ car.getPickUpLocation()+" at "+car.getPickUpDate()+" doesnt exist in your list" + " from your list.");
+            System.out.printf("Your total price for the cars to book is: %.2f", this.getTotalPrice());
         }
     }
 
     public float getTotalPrice() {  //Total price of tickets in the order list
         float total = 0;
-        for(Airline i : airlinesToBook){
-            total += i.getSeatToBook() * i.getPrice();
+        for(Cars i : customerList){
+            total += i.getPrice();
         }
         return total;
     }
